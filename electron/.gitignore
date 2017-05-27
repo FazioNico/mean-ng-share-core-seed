@@ -32,3 +32,8 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+
+*darwin-*/
+*linux-*/
+*mas-*/
+*win32-*/

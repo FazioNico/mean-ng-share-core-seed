@@ -59,7 +59,8 @@ From `./mobile` folder
 <b>Run Electron</b>
 
 From `./electron` folder
-- coming soon ...
+- `$ npm run dev` to start in dev mode
+- `$ npm run prod` to start in prod mode (you have to config your production environments variable `./environment/production.ts`.)
 
 <b>Run only Server REST</b>
 
@@ -90,7 +91,7 @@ If you want, you can add your own build run script.
 <b>Build Electron</b>
 
 From `./electron` folder
-- coming soon ...
+- `$ npm run build`
 
 ## Deploy Applications
 Simply go on the subfolder project as `./server` or `./mobile` or `./electron`
