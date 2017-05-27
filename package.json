@@ -1,0 +1,15 @@
+{
+  "name": "mean-ng-share-core-seed",
+  "version": "0.0.1",
+  "description": "Share Angular Core seed module between multiple MEAN Stack project in the same project folder.",
+  "scripts": {
+    "postinstall": "node tools/install.js",
+    "helper.cmd": "node tools/helper.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicolas Fazio",
+  "homepage": "http://nicoalsfazio.ch/",
+  "private": true,
+  "license": "ISC",
+  "version": "0.0.1"
+}

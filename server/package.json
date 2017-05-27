@@ -1,0 +1,46 @@
+{
+  "name": "server-rest-ng-share-core-seed",
+  "author": "Nicolas Fazio",
+  "homepage": "http://nicolasfazio.ch/",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=prod node ./server/server.js",
+    "dev": "npm run mongod & npm run server.dev & npm run copy.files",
+    "prod": "npm run server.prod & npm run copy.files",
+    "mongod": "$HOME/Applications/mongodb/bin/mongod --dbpath $HOME/Applications/mongodb/data/db",
+    "server.dev": "mkdir ./dist && tsc server.ts -w --outDir ./dist & nodemon ./dist/server/server.js --dev  --ignore src/ --ignore www/ --ignore .tmp/",
+    "server.prod": "tsc server.ts --outDir ./dist",
+    "server:build": "npm run server.prod && npm run copy.files",
+    "deploy:server:": "node ../tools/tasks/deploy.server.js",
+    "copy.files": "cp ./package.json ./dist/package.json && cp ./.gitignore ./dist/.gitignore",
+    "helper.cmd": "node ../tools/helper.js"
+  },
+  "engines": {
+    "node": "~7.0.0"
+  },
+  "version": "0.0.1",
+  "description": "NodeJS Simple REST TS for ng-share-core-seed",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "mongodb": "^2.2.27",
+    "mongoose": "^4.10.2",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.3",
+    "@types/cors": "^2.8.1",
+    "@types/express": "^4.0.35",
+    "@types/mongodb": "^2.2.2",
+    "@types/mongoose": "^4.7.13",
+    "@types/node": "^7.0.22",
+    "mongoose": "^4.10.2",
+    "nodemon": "^1.11.0",
+    "tslint": "^5.3.2",
+    "tslint-eslint-rules": "^4.1.0",
+    "typescript": "^2.3.3"
+  }
+}
