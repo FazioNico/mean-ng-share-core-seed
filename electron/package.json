@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"cd ../server && npm run dev\" \"cd ../mobile && npm run build \" \"electron .\"",
     "prod": "concurrently  \"cd ../mobile && npm run build --prod\" \"electron .\"",
-    "build": "concurrently  \"cd ../mobile && ionic-app-scripts \" \"electron-packager . --overwrite\"",
+    "build": "concurrently  \"cd ../mobile && npm run build \" \"electron-packager . --overwrite\"",
     "clear": "rm -rf electron-ng-share-core-seed-darwin-x64/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

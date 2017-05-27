@@ -3,7 +3,7 @@
 * @Date:   24-05-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 26-05-2017
+ * @Last modified time: 28-05-2017
 */
 
 // Install Script v.0.0.1
@@ -36,7 +36,11 @@ function displayHelper(){
   console.log('       [Helper]:             $ npm run helper.cmd')
   console.log('')
   console.log('   Electron directory:')
-  console.log('       coming soon...')
+  console.log('       [Install]:            $ npm install')
+  console.log('       [Start Dev]:          $ npm run dev')
+  console.log('       [Start Prod]:         $ npm run prod')
+  console.log('       [Build Desktop]:      $ npm run build')
+  console.log('       [Build Desktop Prod]: $ npm run build --prod')
   console.log('')
   console.log('')
   console.log("-----------------------------------------------------------------------------------------");
