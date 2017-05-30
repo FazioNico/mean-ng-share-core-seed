@@ -3,7 +3,7 @@
  * @Date:   14-04-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 27-05-2017
+ * @Last modified time: 30-05-2017
  */
 
  import { Action } from "@ngrx/store";
@@ -11,7 +11,7 @@
 
  export interface ICurrentUserState extends Object {};
 
- export const intitialState:ICurrentUserState = {}
+ export const intitialState:ICurrentUserState = null
 
  export function reducer (state:ICurrentUserState = intitialState, action:Action):ICurrentUserState {
      //console.log('CURRENT USER REDUCER-> ', action);
@@ -23,7 +23,7 @@
           return Object.assign({}, state, action.payload )
        }
        case MainActions.LOGOUT_SUCCESS:{
-          return Object.assign({}, intitialState)
+          return intitialState
        }
 
        case MainActions.CREATE_USER_SUCCESS:{

@@ -18,24 +18,21 @@ import { EffectsModule } from '@ngrx/effects';
 import { reducer } from './reducers';
 import { AuthEffects } from './effects/authEffects';
 import { DatasEffects } from './effects/datasEffects';
-import { ErrorEffects } from './effects/errorEffects';
+// import { ErrorEffects } from './effects/errorEffects';
 
 import { MainActions } from './actions/mainActions';
 
 // Import Providers Service
 import { DatasService } from "../services/datas-service/datas.service";
 import { AuthService } from "../services/auth-service/auth.service";
-import { AlertService } from "../services/alert-service/alert.service";
 
 const providers:Array<any> =  [
     DatasService,
     AuthService,
-    AlertService,
 ];
 const effects:Array<any> = [
     AuthEffects,
-    DatasEffects,
-    ErrorEffects
+    DatasEffects
 ];
 const actions:Array<any> = [
     MainActions
@@ -46,7 +43,6 @@ const actions:Array<any> = [
     HttpModule,
     EffectsModule.runAfterBootstrap(AuthEffects),
     EffectsModule.runAfterBootstrap(DatasEffects),
-    EffectsModule.runAfterBootstrap(ErrorEffects),
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
   ],

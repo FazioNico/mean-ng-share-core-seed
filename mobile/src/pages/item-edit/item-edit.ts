@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store, Action } from '@ngrx/store'
 import 'rxjs/add/operator/map';
 
-import { AppStateI, MainActions, ITodo } from "core";
+import { MainActions, ITodo } from "core";
 
 /**
  * Generated class for the ItemEdit page.

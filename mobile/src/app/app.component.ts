@@ -3,11 +3,11 @@
  * @Date:   26-05-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 27-05-2017
+ * @Last modified time: 30-05-2017
  */
 
 import { Component, OnInit } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -26,11 +26,13 @@ export class MyApp implements OnInit{
   user:any;
   rootPage:any;
   public storeInfo:Observable<AppStateI>;
+  public storeError:Observable<AppStateI>;
 
   constructor(
     platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen,
+    public alertCtrl: AlertController,
     private store: Store<any>,
     private mainActions: MainActions
   ) {
@@ -40,11 +42,18 @@ export class MyApp implements OnInit{
       statusBar.styleDefault();
       splashScreen.hide();
 
+      this.storeError = this.store.select(state => state.error)
+      this.storeError.subscribe(error => {
+        if(error){
+          this.displayError(error)
+        }
+      })
+
       this.storeInfo = this.store.select((state:AppStateI) => state.currentUser)
-      // here we are monitoring the authstate
-      this.storeInfo.subscribe((currentState: any) => {
-        if (currentState._id) {
-          this.user = currentState;
+      this.storeInfo.subscribe(currentUser => {
+
+        if (currentUser) {
+          this.user = currentUser;
           this.rootPage = HomePage;
           console.log('home')
         }
@@ -59,5 +68,15 @@ export class MyApp implements OnInit{
   ngOnInit() {
     this.rootPage = 'LoginPage';
     this.store.dispatch(this.mainActions.checkAuth());
+  }
+
+  displayError(error):void {
+    console.log('error', error.toString())
+    let alert = this.alertCtrl.create({
+      title: 'Error',
+      subTitle: error.toString(),
+      buttons: ['Dismiss']
+    });
+    alert.present();
   }
 }
