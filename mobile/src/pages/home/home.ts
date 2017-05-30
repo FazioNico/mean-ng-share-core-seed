@@ -3,7 +3,7 @@
 * @Date:   26-05-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 27-05-2017
+ * @Last modified time: 30-05-2017
 */
 
 import { Component, OnInit } from '@angular/core';
@@ -55,11 +55,11 @@ export class HomePage implements OnInit {
   }
 
   navToEdit(todo:any):void {
-    console.log('navToEdit-> ', todo)
-    // this.navCtrl.push('ItemEditPage', {
-    //   id: todo._id,
-    //   todo: todo
-    // })
+    // console.log('navToEdit-> ', todo)
+    this.navCtrl.push('ItemEditPage', {
+      id: todo._id,
+      todo: todo
+    })
   }
 
   doLogout(){

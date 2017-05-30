@@ -48,7 +48,7 @@
         <ion-label>{{ todo.description }}</ion-label>
         <ion-checkbox (click)="toggleComplete(todo)" [checked]="todo.isComplete"></ion-checkbox>
         <ion-badge
-          item-right>{{ todo.deadline }}
+          item-right>{{ todo.deadline | date }}
         </ion-badge>
       </ion-item>
 

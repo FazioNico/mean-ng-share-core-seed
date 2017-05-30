@@ -3,7 +3,7 @@
  * @Date:   23-05-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 24-05-2017
+ * @Last modified time: 30-05-2017
  */
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +17,11 @@ import { HomePage } from '../pages/home/home';
 
 import { CoreModule } from "core";
 
+const ionicAppConfig:Object = {
+  tabsPlacement: 'bottom',
+  mode: 'md'
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -24,7 +29,7 @@ import { CoreModule } from "core";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, ionicAppConfig),
     CoreModule
   ],
   bootstrap: [IonicApp],
