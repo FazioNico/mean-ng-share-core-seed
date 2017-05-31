@@ -4,8 +4,6 @@
 
 <blockquote>Share Angular Core seed module between multiple MEAN Stack project in the same project folder.</blockquote>
 
-> **WORK IN PROCCESS: currently not ready to use**
-
 
 ## Overview
 My own TypeScript Full Stack MongoDB + ExpressJS + Angular + NodeJS with Ionic Framework and Electron Framework to provide full multi platform application (iOS/Android platform + Web Browser platform + Desktop platform) with the same core code in same folder.

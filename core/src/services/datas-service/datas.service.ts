@@ -3,7 +3,7 @@
  * @Date:   21-05-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 26-05-2017
+ * @Last modified time: 31-05-2017
  */
 
  import { Injectable, Inject } from '@angular/core';
@@ -11,8 +11,10 @@
  import { Observable } from 'rxjs';
  import 'rxjs/add/operator/map';
 
+ import { MainActions } from "../../app-state-module/actions/mainActions";
+
  import { EnvVariables } from '../../environment/environment.token';
- import { IEnvironment } from "../../../../environment/env-model";
+ import { IEnvironment } from "../../environment/";
 
  const STORAGE_ITEM:string = 'authTokenTest';
 
@@ -48,7 +50,7 @@
        let storage:any = JSON.parse(localStorage.getItem(STORAGE_ITEM))
        // if storage not found
        if(!storage){
-         observer.next({ type: 'GET_DATAS_ARRAY_FAILED' })
+         observer.next({ type: MainActions.GET_DATAS_ARRAY_FAILED })
        }
        // Define Heders request
        let headers:Headers = new Headers({'cache-control': 'no-cache','x-access-token': storage.token});
@@ -58,11 +60,11 @@
                 .map(response => response.json())
                 .subscribe(
                    datas => {
-                     observer.next({ type: 'GET_DATAS_ARRAY_SUCCESS', payload: datas })
+                     observer.next({ type: MainActions.GET_DATAS_ARRAY_SUCCESS, payload: datas })
                    },
                    (error) => {
                        console.log(' ERROR: ' + error);
-                       observer.next({ type: 'GET_DATAS_ARRAY_FAILED', payload: error })
+                       observer.next({ type: MainActions.GET_DATAS_ARRAY_FAILED, payload: error })
                    });
      })
    }
@@ -89,11 +91,11 @@
        Observable.of(datas)
                  .subscribe(
                     datas => {
-                      observer.next({ type: 'GET_DATAS_ARRAY_SUCCESS', payload: datas })
+                      observer.next({ type: MainActions.GET_DATAS_ARRAY_SUCCESS, payload: datas })
                     },
                     (error) => {
                         console.log(' ERROR: ' + error);
-                        observer.next({ type: 'GET_DATAS_ARRAY_FAILED', payload: error })
+                        observer.next({ type: MainActions.GET_DATAS_ARRAY_FAILED, payload: error })
                     });
      });
    }
@@ -111,12 +113,12 @@
                 .map(response => response.json())
                 .subscribe(
                     data => {
-                       observer.next({ type: 'UPDATE_DATA_SUCCESS', payload: {response: data.response, queryParams:_query} })
+                       observer.next({ type: MainActions.UPDATE_DATA_SUCCESS, payload: {response: data.response, queryParams:_query} })
                     },
                     (error:any) => {
                       // format data error
                       let msg:string = `${(error.statusText)? error.statusText + ' Could not update item' : 'Could not update item'}`
-                      observer.next({ type: 'UPDATE_DATA_FAILED', payload: msg })
+                      observer.next({ type: MainActions.UPDATE_DATA_FAILED, payload: msg })
                     }
                 ); // Eof subscribe
      });
@@ -132,11 +134,11 @@
        this.http.delete(url, headers)
                 .subscribe(
                   (data:any) => {
-                     observer.next({ type: 'DELETE_DATA_SUCCESS', payload: {response: data, queryParams:_query} })
+                     observer.next({ type: MainActions.DELETE_DATA_SUCCESS, payload: {response: data, queryParams:_query} })
                    },
                    (error) => {
                      let msg:string = `${(error.statusText)? error.statusText + ' Could not delete item' : 'Could not delete item'}`
-                     observer.next({ type: 'DELETE_DATA_FAILED', payload: msg })
+                     observer.next({ type: MainActions.DELETE_DATA_FAILED, payload: msg })
                    }
                 );
      });
@@ -149,7 +151,7 @@
        let storage:any = JSON.parse(localStorage.getItem(STORAGE_ITEM))
        // if storage not found
        if(!storage){
-         observer.next({ type: 'GET_DATAS_ARRAY_FAILED' })
+         observer.next({ type: MainActions.GET_DATAS_ARRAY_FAILED })
        }
        // Define Heders request
 
@@ -163,11 +165,11 @@
                 .subscribe(
                    data => {
                      // assign new state to observable Todos Subject
-                     observer.next({ type: 'CREATE_DATA_SUCCESS', payload: data })
+                     observer.next({ type: MainActions.CREATE_DATA_SUCCESS, payload: data })
                    },
                    (error) => {
                      let msg:string = `${(error.statusText)? error.statusText + ' Could not create item' : 'Could not create item'}`
-                     observer.next({ type: 'CREATE_DATA_FAILED', payload: msg })
+                     observer.next({ type: MainActions.CREATE_DATA_FAILED, payload: msg })
                    }
                 );
      })

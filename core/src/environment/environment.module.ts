@@ -3,14 +3,12 @@
  * @Date:   09-04-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 24-05-2017
+ * @Last modified time: 31-05-2017
  */
 
  import { NgModule } from '@angular/core';
  import { EnvVariables } from './environment.token';
- import { devVariables } from '../../../environment/development';
- import { prodVariables } from '../../../environment/production';
- import { IEnvironment } from "../../../environment/env-model";
+ import { devVariables, prodVariables, IEnvironment } from "../../../environment";
 
  declare const process: any; // Typescript compiler will complain without this
 
