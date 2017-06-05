@@ -110,8 +110,7 @@ From `./mobile` folder
 
 ## Helper & Documentations
 Use custom Helper to have all cmd list available:
-- `$ npm run helper:cli`
-Generate & update & Read documentations:
+- `$ npm run helper.cmd` Displaying Command Line available
 - `$ npm run docs` to generate or update app documentations
 - open `./docs/index.html` to read app documentations
 
