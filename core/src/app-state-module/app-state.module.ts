@@ -3,7 +3,7 @@
  * @Date:   21-05-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 30-05-2017
+ * @Last modified time: 05-06-2017
  */
 
 import { NgModule } from '@angular/core';
@@ -44,7 +44,7 @@ const actions:Array<any> = [
     EffectsModule.runAfterBootstrap(AuthEffects),
     EffectsModule.runAfterBootstrap(DatasEffects),
     StoreModule.provideStore(reducer),
-    StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    StoreDevtoolsModule.instrumentOnlyWithExtension()
   ],
   declarations: [],
   providers: [...providers, ...effects, ...actions]

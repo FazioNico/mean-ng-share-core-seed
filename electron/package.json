@@ -8,7 +8,8 @@
     "prod": "concurrently  \"cd ../mobile && npm run build --prod\" \"electron .\"",
     "build": "concurrently  \"cd ../mobile && npm run build \" \"electron-packager . --overwrite\"",
     "clear": "rm -rf electron-ng-share-core-seed-darwin-x64/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "helper:cmd": "node ../tools/helper.js"
   },
   "author": "",
   "license": "ISC",

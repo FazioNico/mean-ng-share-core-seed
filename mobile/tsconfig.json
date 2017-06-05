@@ -12,9 +12,21 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es5",
+    "mapRoot": "./",
     "baseUrl": ".",
+    "typeRoots": [
+      "../core/node_modules/@types"
+    ],
+    "skipLibCheck": true,
     "paths": {
-      "core": ["../core/src/index"]
+      "core": ["../core/src/index"],
+      "@angular/*": ["../core/node_modules/@angular/*"],
+      "@ngrx/*": ["../core/node_modules/@ngrx/*"],
+      "rxjs/*": ["../core/node_modules/rxjs/*"],
+      "ngrx-store-freeze" :["../core/node_modules/ngrx-store-freeze"],
+      "deep-*" :["../core/node_modules/deep-*"],
+      "tslint": ["../core/node_modules/tslint"],
+      "zone.js": ["../core/node_modules/zone.js"]
     }
   },
   "include": [

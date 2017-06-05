@@ -3,12 +3,12 @@
 * @Date:   24-05-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 24-05-2017
+ * @Last modified time: 05-06-2017
 */
 
 
-// Install Script v.0.0.1
-//
+// Deploy Server Script v.0.0.1
+
 "use strict";
 
 var cp = require('child_process');

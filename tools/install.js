@@ -3,12 +3,12 @@
 * @Date:   24-05-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 26-05-2017
+ * @Last modified time: 05-06-2017
 */
 
 
-// Install Script v.0.0.1
-//
+// Install Script v.0.0.2
+
 "use strict";
 
 var debugging = false;
@@ -27,7 +27,8 @@ console.log('[INSTALL] - MEAN Angular Core Seed installation:');
 
 installCore();
 installMobile();
-installCoreDepIntoMobile();
+installServer()
+installElectron()
 displayFinalHelp();
 
 return 0;
@@ -57,16 +58,28 @@ function installMobile(){
   console.log('   [SUCCESS] -  Mobile dependecies install with success')
 }
 
-function installCoreDepIntoMobile(){
-  console.log('   [RUN] - install Core dependecies into Mobile app...')
+function installServer(){
+  console.log('   [RUN] - install Server app...')
   try {
-    cp.execSync("cd ./mobile && npm install ../core && cd ../");
+    cp.execSync("cd ./server && npm install && cd ../");
   }
   catch (err) {
-    console.log("   [ERROR] - install core npm dependecies into Mobile app have an error: ", err);
+    console.log("   [ERROR] - install Server app have an error: ", err);
     return 0;
   }
-  console.log('   [SUCCESS] -  Core dependecies install into Mobile app with success')
+  console.log('   [SUCCESS] -  Server app with success')
+}
+
+function installElectron(){
+  console.log('   [RUN] - install Electron app...')
+  try {
+    cp.execSync("cd ./electron && npm install && cd ../");
+  }
+  catch (err) {
+    console.log("   [ERROR] - install Electron app have an error: ", err);
+    return 0;
+  }
+  console.log('   [SUCCESS] -  Electron app with success')
 }
 
 /**

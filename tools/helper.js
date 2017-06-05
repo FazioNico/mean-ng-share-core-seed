@@ -3,11 +3,11 @@
 * @Date:   24-05-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 28-05-2017
+ * @Last modified time: 05-06-2017
 */
 
-// Install Script v.0.0.1
-//
+// Helper Script v.0.0.1
+
 "use strict";
 
 displayHelper();
