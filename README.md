@@ -76,7 +76,7 @@ From `./server` folder
 
 <b>Build Ionic Framework</b>
 
-First add selected platform: `$ ionic platform add browser|ios|android` (one by one). Then you can build each platform with ionic CLI `$ ionic build browser|ios|android --prod`
+First add selected platform: `$ ionic cordova platform add browser|ios|android` (one by one). Then you can build each platform with ionic CLI `$ ionic cordova build browser|ios|android --prod`
 
 And we have the following npm run script ready to use:
 - `$ npm run build:browser` to build app browser version
