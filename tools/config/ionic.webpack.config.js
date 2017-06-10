@@ -3,13 +3,12 @@
  * @Date:   23-05-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 26-05-2017
+ * @Last modified time: 10-06-2017
  */
 
  var webpack = require('../../mobile/node_modules/webpack');
  var config = require('../../mobile/node_modules/@ionic/app-scripts/config/webpack.config.js');
- var ionicWebpackFactory = require(process.env.IONIC_WEBPACK_FACTORY);
-
+ 
  var TsConfigPathsPlugin = require('../../mobile/node_modules/awesome-typescript-loader').TsConfigPathsPlugin;
 
 
