@@ -3,7 +3,7 @@
  * @Date:   21-05-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 05-06-2017
+ * @Last modified time: 10-08-2017
  */
 
 import { NgModule } from '@angular/core';
@@ -41,10 +41,9 @@ const actions:Array<any> = [
 @NgModule({
   imports: [
     HttpModule,
-    EffectsModule.runAfterBootstrap(AuthEffects),
-    EffectsModule.runAfterBootstrap(DatasEffects),
-    StoreModule.provideStore(reducer),
-    StoreDevtoolsModule.instrumentOnlyWithExtension()
+    EffectsModule.forRoot(effects),
+    StoreModule.forRoot(reducer),
+    StoreDevtoolsModule.instrument()
   ],
   declarations: [],
   providers: [...providers, ...effects, ...actions]

@@ -3,7 +3,7 @@
 * @Date:   14-04-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 26-05-2017
+ * @Last modified time: 10-08-2017
 */
 
 
@@ -35,8 +35,8 @@ export class AuthEffects {
   @Effect() checkAuthAction$ = this.action$
       // Listen for the 'CHECK_AUTH' action
       .ofType(MainActions.CHECK_AUTH)
-      .switchMap<Action, any>(() => this._auth.isAuth())
-      .take(1)
+      .switchMap<Action, any>(() =>  this._auth.isAuth())
+      //.take(1)
       .map<Action, any>((_result:any) => {
         if (_result.type === MainActions.CHECK_AUTH_SUCCESS) {
           return <Action>{ type: MainActions.CHECK_AUTH_SUCCESS, payload: _result.payload }

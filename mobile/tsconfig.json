@@ -12,7 +12,6 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es5",
-    "mapRoot": "./",
     "baseUrl": ".",
     "typeRoots": [
       "../core/node_modules/@types"

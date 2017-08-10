@@ -3,7 +3,7 @@
  * @Date:   26-05-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 26-05-2017
+ * @Last modified time: 10-08-2017
  */
 
 import { Component } from '@angular/core';
@@ -57,6 +57,7 @@ export class Login {
   onLogin(){
     //this.submitted = true;
     if (this.userForm.valid) {
+      console.log(this.userForm)
       this.store.dispatch(<Action>this.mainActions.login(this.userForm));
     }
   }

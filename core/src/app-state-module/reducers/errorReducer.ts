@@ -3,7 +3,7 @@
  * @Date:   14-04-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 30-05-2017
+ * @Last modified time: 10-08-2017
  */
 
  import { Action } from "@ngrx/store";
@@ -13,7 +13,7 @@
 
  export const intitialState:IErrorState = null
 
- export function reducer (state:IErrorState = intitialState, action:Action):IErrorState {
+ export function reducer (state:IErrorState = intitialState, action:any):IErrorState {
      //console.log('ERROR REDUCER-> ', action);
      switch (action.type) {
        case MainActions.GET_DATAS_ARRAY_FAILED: {

@@ -3,7 +3,7 @@
  * @Date:   26-05-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 05-06-2017
+ * @Last modified time: 10-08-2017
  */
 
 import { Component, OnInit } from '@angular/core';
@@ -23,7 +23,6 @@ import { HomePage } from '../pages/home/home';
 })
 export class MyApp implements OnInit{
 
-  user:any;
   rootPage:any;
   public storeInfo:Observable<AppStateI>;
   public storeError:Observable<AppStateI>;
@@ -53,7 +52,6 @@ export class MyApp implements OnInit{
       this.storeInfo.subscribe(currentUser => {
 
         if (currentUser) {
-          this.user = currentUser;
           this.rootPage = HomePage;
           console.log('home')
         }

@@ -3,7 +3,7 @@
  * @Date:   14-04-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 19-04-2017
+ * @Last modified time: 10-08-2017
  */
 
  import { Action } from "@ngrx/store";
@@ -20,7 +20,7 @@
    queryParams: {path: '/'}
  }
 
- export function reducer (state:IqueryParamsState = intitialState, action:Action):IqueryParamsState {
+ export function reducer (state:IqueryParamsState = intitialState, action:any):IqueryParamsState {
      //console.log('ARRAY DATAS REDUCER-> ', action);
      switch (action.type) {
        case MainActions.GET_DATAS_ARRAY: {

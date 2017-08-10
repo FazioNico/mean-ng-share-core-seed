@@ -3,7 +3,7 @@
  * @Date:   26-05-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 31-05-2017
+ * @Last modified time: 10-08-2017
  */
 
  import { Injectable, Inject } from '@angular/core';
@@ -50,6 +50,7 @@
        // if storage not found
        if(!storage){
          observer.next({ type: MainActions.CHECK_AUTH_NO_USER })
+         return;
        }
        // Define Heders request
        let headers:Headers = new Headers({'cache-control': 'no-cache','x-access-token': storage.token});
@@ -77,6 +78,7 @@
      let options:RequestOptions = new RequestOptions({ headers: headers });
 
      let userReady:string = `email=${_creds.email}&password=${_creds.password}`;
+     //console.log(_creds)
      //console.log('UserReady-> ', userReady)
      // Post request with data & headers
      return Observable.create((observer) => {

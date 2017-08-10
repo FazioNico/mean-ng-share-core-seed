@@ -3,7 +3,7 @@
  * @Date:   14-04-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 30-05-2017
+ * @Last modified time: 10-08-2017
  */
 
  import { Action } from "@ngrx/store";
@@ -13,7 +13,7 @@
 
  export const intitialState:ICurrentUserState = null
 
- export function reducer (state:ICurrentUserState = intitialState, action:Action):ICurrentUserState {
+ export function reducer (state:ICurrentUserState = intitialState, action:any):ICurrentUserState {
      //console.log('CURRENT USER REDUCER-> ', action);
      switch (action.type) {
        case MainActions.LOGIN_SUCCESS:{
