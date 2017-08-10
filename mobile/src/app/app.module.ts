@@ -3,7 +3,7 @@
  * @Date:   23-05-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 30-05-2017
+ * @Last modified time: 10-08-2017
  */
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,8 +29,8 @@ const ionicAppConfig:Object = {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp, ionicAppConfig),
-    CoreModule
+    CoreModule,
+    IonicModule.forRoot(MyApp, ionicAppConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

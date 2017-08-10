@@ -3,10 +3,9 @@
  * @Date:   14-04-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 27-05-2017
+ * @Last modified time: 10-08-2017
  */
- import { combineReducers, ActionReducer, Action } from '@ngrx/store';
- import { compose } from '@ngrx/core/compose';
+ import { ActionReducerMap, combineReducers, ActionReducer, Action } from '@ngrx/store';
  import { storeFreeze } from 'ngrx-store-freeze';
 
  import * as fromDatas from './datasReducer';
@@ -30,11 +29,15 @@
    currentUser: fromCurrentUser.reducer,
    error: fromError.reducer
  };
- const developmentReducer:ActionReducer<AppStateI> = compose(storeFreeze, combineReducers)(reducers);
- const productionReducer: ActionReducer<AppStateI> = combineReducers(reducers);
+ const developmentReducer:ActionReducerMap<AppStateI> = reducers;
+ const productionReducer: ActionReducerMap<AppStateI> = reducers; //combineReducers(reducers);
 
- export function reducer(state: any, action: Action):AppStateI {
-   let combineReducer:AppStateI = process.env.IONIC_ENV === 'prod' ? productionReducer(state, action) : developmentReducer(state, action);
-   if(process.env.NODE_ENV === 'prod') { combineReducer = productionReducer(state, action) };
-   return combineReducer
- }
+
+ //export const reducer:ActionReducerMap<State> = process.env.IONIC_ENV === 'prod' ? productionReducer :  developmentReducer;
+ export const reducer:ActionReducerMap<AppStateI> = process.env.IONIC_ENV === 'prod' ? productionReducer :  developmentReducer;
+
+ // export function reducer(state: any, action: Action):AppStateI {
+ //   let combineReducer:AppStateI = process.env.IONIC_ENV === 'prod' ? productionReducer(state, action) : developmentReducer(state, action);
+ //   if(process.env.NODE_ENV === 'prod') { combineReducer = productionReducer(state, action) };
+ //   return combineReducer
+ // }

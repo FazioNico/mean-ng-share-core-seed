@@ -3,7 +3,7 @@
  * @Date:   14-04-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 27-05-2017
+ * @Last modified time: 10-08-2017
  */
 
  import { Action } from "@ngrx/store";
@@ -14,7 +14,7 @@
 
  export const intitialState:IDatasState = []
 
- export function reducer (state:IDatasState = intitialState, action:Action):IDatasState {
+ export function reducer (state:IDatasState = intitialState, action:any):IDatasState {
      //console.log('ARRAY DATAS REDUCER-> ', action);
      switch (action.type) {
        case MainActions.GET_DATAS_ARRAY: {
